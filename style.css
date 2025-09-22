@@ -1,0 +1,113 @@
+/* Add your CSS here */
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Hero Section */
+header {
+  background: linear-gradient(to right, #0071C5, #00A0F0);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+header img {
+  width: 120px; /* Resize Intel logo */
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline Section */
+section {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* smooth horizontal scrolling */
+  scroll-behavior: smooth; /* optional: smooth scroll */
+}
+
+section div {
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1rem;
+  position: relative;
+}
+
+/* Make all images the same size */
+section div img {
+  width: 100%;
+  height: 200px;       /* consistent height */
+  object-fit: cover;   /* crop to fit neatly without stretching */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+section div h2 {
+  font-size: 1rem;
+  color: #0071C5;
+  margin: 0;
+}
+
+section div h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+section div p {
+  display: none; /* Hidden initially */
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Hover Effects with Scale & Shadow Enhancements */
+section div:hover {
+  transform: translateY(-10px) scale(1.03); /* subtle lift + zoom */
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2); /* deeper shadow */
+}
+
+section div:hover p {
+  display: block;
+}
+
+/* Instruction Text */
+body > p {
+  text-align: center;
+  margin: 1rem 0 3rem 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Responsive Design: Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    overflow-x: visible;
+  }
+
+  section div {
+    flex: 1 0 auto;
+  }
+}
